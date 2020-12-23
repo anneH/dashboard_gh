@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Languages</title>
-</head>
-
+{% extends 'base.html' %}
+{% block content %}
 <body>
-    <div class="container">
-      <div class="row">
-
         <div class="col-sm-8">
-          {{ rendered_chart_svg | safe }}
-           
+          <embed type="image/svg+xml" src="{{ rendered_chart_svg_as_datauri|safe }}" />
         </div>
       </div>
 </body>
-</html>
+{% endblock %}
+
+
 
 
 
