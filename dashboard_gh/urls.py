@@ -20,7 +20,10 @@ from github_stats.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('details/<panel_id>/', views.panel_details),
+    # path('details/<panel_id>/<search_term>', views.???),
     path('github-languages/', views.github_languages, name='languages'),
     path('github-sizes/', views.github_sizes, name='sizes'),
     path('', index),
+    path('project-descriptions/', views.project_descriptions, name='descriptions'),
 ]

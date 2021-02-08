@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <!-- <main class="my-5"> -->
+        <div class="container">
+          <section class="text-center">
+            <div class="row">
+            <h1><strong>Kickstart Coding Projects</strong></h1>
+            <br>
+            <br>
+          <div class="container">
+           <div class="row">
+            {% for project in project_list %}
+            <div class="col">
+              <p class="mb-mb-0">
+                <h1><a href="{{project.repo_url}}"> {{project.project_name}}</a></h1>
+                <!-- <h5 class="my-4">{{project.project_name}}</h5> -->
+                <h5>{{project.project_description}}</h5>
+                 </p>
+            </div>
+            {% endfor %}
+          </div>
+          <section class="text-center">
+        <div class="row">
+        {% for panel in panels_list %}
+        <div class="col">
+          <p class="mb-mb-0">
+         <div class="shadow border"> 
+         <p>{{ panel.title }}</p>
+         <a href="/details/{{ panel.id }}/">Click for more</a>
+         </div>
+        {% endfor %}
+        </div>
+      </section>
+
+    </body>
+{% endblock %}

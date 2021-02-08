@@ -27,6 +27,7 @@
       <div class="sidebar-heading">Stats for anneH's Github Repositories </div>
       <div class="list-group list-group-flush">
         <a href="/" class="list-group-item list-group-item-action bg-light">Repo List</a>
+        <a href="{% url 'descriptions' %}"class="list-group-item list-group-item-action bg-light"> Kickstart Coding Projects</a>
         <a href="{% url 'languages' %}" class="list-group-item list-group-item-action bg-light">Languages</a>
         <a href="{% url 'sizes' %}" class="list-group-item list-group-item-action bg-light">Sizes</a>
       </div>
@@ -51,6 +52,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/">Repo List</a>
+                <a class="dropdown-item" href="{% url 'descriptions' %}"> Kickstart Coding Projects</a>
                 <a class="dropdown-item" href="{% url 'languages' %}">Languages</a>
                 <a class="dropdown-item" href="{% url 'sizes' %}">Sizes</a>
               </div>
