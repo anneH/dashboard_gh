@@ -84,15 +84,11 @@ def project_descriptions(request):
     return render(request, 'repo_descriptions.html', context)
 
 
-# def panel_details(request, panel_id, name):
-#     panel = DashboardPanel.objects.filter(name=name)
-
+# Renders the chart for each detail view of Kickstart Coding repos
 def panel_details(request, panel_id):
     panel = DashboardPanel.objects.get(id=panel_id)
     kc_repos = get_kc_repos(repos)
     repo_languages = get_languages(kc_repos)
-    print(repo_languages)
-    # repo_languages = get_languages(repos)
     if panel.panel_type == 'piechart':
         chart = pygal.Pie()
         for language, count in repo_languages.items():
@@ -107,19 +103,3 @@ def panel_details(request, panel_id):
         'rendered_chart_svg_as_datauri' : chart_svg_as_datauri,
     }
     return render(request, "panel_details.html", context)
-
-
-
-# TODO: Make aspects of the chart (such as Pie vs Bar, styling, etc)
-# customizable based on the data in the panel model
-# TODO: Get data from API, file, DB, or somewhere else, possibly based on
-# the panel model
-    # for repo_dict in repo_list:
-    #     value = 42 # TODO: Replace this...
-    #     label = repo_dict["name"]
-    #     chart.add(label, value)
-    # context = {
-    # "panel": panel,
-    # "rendered_chart_svg": chart.render(),
-    # }
-    # return render(request, "panel_details.html", context)
